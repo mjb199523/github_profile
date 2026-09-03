@@ -11,7 +11,7 @@ export default function Home() {
           Build a GitHub profile worth looking at.
         </h1>
         <p className="text-lg text-text-secondary max-w-xl mb-10 leading-relaxed">
-          Create a polished GitHub Profile README from your GitHub profile. Customize your story, projects and tech stack, preview it live, and copy it when you're ready.
+          Create a polished GitHub Profile README from your GitHub profile. Customize your story, projects and tech stack, preview it live, and copy it when you are ready.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 items-center">
