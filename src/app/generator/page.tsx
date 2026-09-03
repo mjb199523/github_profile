@@ -23,6 +23,7 @@ export default function GeneratorPage() {
   const [viewMode, setViewMode] = useState<"preview" | "markdown">("preview");
   const [techSearch, setTechSearch] = useState("");
   const [isTechDropdownOpen, setIsTechDropdownOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -365,10 +366,14 @@ export default function GeneratorPage() {
                 <p className="text-text-secondary mb-6">Your README is fully designed and ready.</p>
                 <div className="space-y-4">
                   <button 
-                    onClick={() => navigator.clipboard.writeText(generatedMarkdown)}
-                    className="w-full h-11 bg-accent hover:bg-accent-hover text-white font-medium rounded-lg transition-colors"
+                    onClick={() => {
+                      navigator.clipboard.writeText(generatedMarkdown);
+                      setCopied(true);
+                      setTimeout(() => setCopied(false), 2000);
+                    }}
+                    className="w-full h-11 bg-accent hover:bg-accent-hover text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
                   >
-                    Copy README Markdown
+                    {copied ? "Copied! ✓" : "Copy README Markdown"}
                   </button>
                   <button 
                     onClick={() => {
